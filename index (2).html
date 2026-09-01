@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mass Biryani | Tamil Nadu Style</title>
+<meta name="description" content="Mass Biryani - Tamil Nadu style biryani with an irresistible 1+1 offer.">
+<style>
+:root{
+  --bg:#080705;--card:#17110c;--gold:#ffbf32;--orange:#ff6a00;
+  --red:#d91e18;--cream:#fff3d0;--muted:#c8b99c;--green:#35d07f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(circle at 80% 10%,#4a1807 0,#120a05 28%,var(--bg) 65%);
+  color:#fff;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;
+  background-image:linear-gradient(45deg,#fff 1px,transparent 1px);
+  background-size:6px 6px;mix-blend-mode:overlay;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.nav{
+  position:sticky;top:0;z-index:100;padding:16px 0;
+  background:rgba(8,7,5,.78);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,191,50,.14)
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:1000;font-size:24px;letter-spacing:-1px}
+.logo-badge{
+  width:43px;height:43px;border-radius:14px;display:grid;place-items:center;
+  background:linear-gradient(145deg,#ffcf4a,#e34b08);
+  box-shadow:inset 3px 3px 8px #fff5, inset -5px -5px 9px #7b1808,0 8px 25px #ff650055;
+  transform:rotate(-5deg)
+}
+.nav-links{display:flex;gap:28px;color:#d9c8a8;font-weight:700;font-size:14px}
+.nav-links a:hover{color:var(--gold)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;
+  padding:13px 20px;border-radius:14px;font-weight:900;cursor:pointer;
+  color:#1b0d03;background:linear-gradient(135deg,#ffd85a,#ff7612);
+  box-shadow:0 9px 25px #ff7b002e,inset 0 2px 2px #fff8;
+  transition:.25s transform,.25s box-shadow
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 35px #ff7b0050}
+.btn.dark{color:#fff;background:#21170e;border:1px solid #ffbf3240;box-shadow:none}
+
+.hero{min-height:720px;display:grid;place-items:center;padding:70px 0 45px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
+.badge{
+  display:inline-flex;padding:9px 14px;border-radius:999px;color:#1b0d03;
+  background:linear-gradient(90deg,#ffd95c,#ff7411);font-weight:1000;font-size:12px;
+  box-shadow:0 7px 25px #ff8b0033
+}
+h1{font-size:clamp(48px,7vw,90px);line-height:.92;letter-spacing:-5px;margin:22px 0}
+.gradient{background:linear-gradient(100deg,#fff8dc 15%,#ffc72c 48%,#ff5a00 85%);color:transparent;background-clip:text}
+.hero p{max-width:600px;color:#d6c5a5;font-size:18px;line-height:1.7}
+.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.stats{display:flex;gap:35px;margin-top:34px;flex-wrap:wrap}
+.stat strong{display:block;font-size:27px;color:var(--gold)}.stat span{font-size:12px;color:#aa997c}
+
+.food-scene{height:510px;position:relative;perspective:1000px}
+.glow{position:absolute;width:350px;height:350px;border-radius:50%;background:#ff6900;filter:blur(90px);opacity:.2;right:25px;top:80px}
+.plate{
+  position:absolute;width:400px;height:400px;border-radius:50%;right:25px;top:55px;
+  background:radial-gradient(circle,#352317 0 45%,#19120d 46% 59%,#6c4a25 60% 63%,#16100b 64%);
+  box-shadow:25px 35px 55px #000b,inset 0 8px 18px #fff2;
+  transform:rotateX(58deg) rotateZ(-9deg);
+}
+.rice{
+  position:absolute;width:305px;height:245px;border-radius:50%;right:74px;top:95px;
+  background:
+    radial-gradient(circle at 20% 30%,#fff4bd 0 3px,transparent 4px),
+    radial-gradient(circle at 65% 25%,#ffd765 0 4px,transparent 5px),
+    radial-gradient(circle at 40% 65%,#fff0ad 0 4px,transparent 5px),
+    radial-gradient(circle at 80% 65%,#ffc94a 0 3px,transparent 4px),
+    linear-gradient(145deg,#f8d77c,#a94712);
+  box-shadow:inset 0 12px 20px #fff5,0 18px 25px #0008;
+  transform:rotateX(58deg) rotateZ(-9deg);z-index:2
+}
+.meat{position:absolute;z-index:4;width:90px;height:64px;border-radius:45% 55% 45% 50%;
+ background:linear-gradient(145deg,#8e3513,#3d1308);box-shadow:inset 5px 5px 8px #e77b2d55,0 9px 10px #0008}
+.m1{right:135px;top:120px;transform:rotate(-12deg) rotateX(58deg)}
+.m2{right:245px;top:185px;transform:rotate(22deg) rotateX(58deg)}
+.m3{right:145px;top:245px;transform:rotate(-22deg) rotateX(58deg)}
+.leaf{position:absolute;z-index:5;width:18px;height:8px;background:#39a94e;border-radius:100% 0;transform:rotate(30deg)}
+.l1{right:180px;top:185px}.l2{right:270px;top:225px}.l3{right:215px;top:285px}
+.offer{
+ position:absolute;z-index:10;left:0;top:60px;width:155px;height:155px;border-radius:50%;
+ display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,#ffdd56,#e9330d);
+ border:5px solid #fff2bc;color:#260d02;box-shadow:0 20px 40px #0009,inset 7px 7px 12px #fff7,inset -10px -10px 16px #8d150b;
+ transform:rotate(-10deg)
+}
+.offer b{font-size:34px;line-height:.8;display:block}.offer small{font-weight:1000}
+
+.floating{
+ position:absolute;z-index:20;background:#17100bce;border:1px solid #ffbf3244;
+ backdrop-filter:blur(14px);padding:13px 16px;border-radius:18px;
+ box-shadow:0 15px 40px #0008
+}
+.f1{right:-5px;top:10px}.f2{left:45px;bottom:55px}.floating span{font-size:11px;color:#b9a68b}.floating strong{display:block;color:#ffd15b}
+
+.section{padding:95px 0}
+.section-title{text-align:center;max-width:700px;margin:0 auto 45px}
+.kicker{color:var(--orange);font-weight:1000;text-transform:uppercase;letter-spacing:3px;font-size:12px}
+h2{font-size:clamp(34px,5vw,55px);letter-spacing:-2px;margin:10px 0}
+.section-title p{color:#bcae96;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+ position:relative;overflow:hidden;padding:28px;border-radius:25px;
+ background:linear-gradient(145deg,#21160d,#100c08);border:1px solid #ffbd3024;
+ box-shadow:0 20px 50px #0008,inset 1px 1px 0 #fff08;transition:.3s
+}
+.card:hover{transform:translateY(-8px) rotateX(2deg);border-color:#ffbd3066}
+.food-icon{height:150px;display:grid;place-items:center;font-size:90px;filter:drop-shadow(0 20px 15px #000)}
+.card h3{font-size:23px;margin:8px 0}.card p{color:#ad9e87;font-size:14px;line-height:1.6}
+.price{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+.price b{color:#ffd04a;font-size:24px}.tag{font-size:11px;background:#4b190c;color:#ff9e4a;padding:7px 9px;border-radius:999px}
+
+.offer-section{
+ margin:20px auto;padding:55px;border-radius:35px;overflow:hidden;position:relative;
+ background:linear-gradient(135deg,#7b1b0b,#df4308 48%,#f49d13);
+ box-shadow:0 30px 70px #0009
+}
+.offer-section:after{content:"1+1";position:absolute;right:-30px;bottom:-85px;font-size:250px;font-weight:1000;color:#fff1}
+.offer-content{position:relative;z-index:2;max-width:700px}
+.offer-content h2{font-size:clamp(40px,6vw,70px)}.offer-content p{font-size:17px;line-height:1.7;color:#ffe9c0}
+.offer-note{margin-top:20px;font-size:12px;color:#ffe0a3}
+
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.feature{text-align:center;padding:25px 15px;border-radius:20px;background:#120d08;border:1px solid #ffbf321b}
+.feature .ico{font-size:30px}.feature h4{margin:10px 0 5px}.feature p{font-size:12px;color:#9e9079}
+
+.cta{text-align:center;padding:85px 20px}
+.cta h2{max-width:750px;margin:10px auto 20px}
+footer{padding:30px 0;border-top:1px solid #ffbf3218;color:#897b68;font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+@media(max-width:850px){
+ .hero-grid{grid-template-columns:1fr}.food-scene{height:430px;transform:scale(.85);margin:-25px auto}
+ .cards{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}
+ .nav-links{display:none}.hero{padding-top:45px}h1{letter-spacing:-3px}
+}
+@media(max-width:560px){
+ .cards{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}
+ .food-scene{transform:scale(.68);width:450px;left:50%;margin-left:-225px}
+ .offer-section{padding:35px 25px}.stats{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+ <div class="container nav-inner">
+  <a class="logo" href="#"><span class="logo-badge">🍗</span> MASS BIRYANI</a>
+  <div class="nav-links">
+   <a href="#menu">Menu</a><a href="#offer">1+1 Offer</a><a href="#why">Why Us</a>
+  </div>
+  <a class="btn" href="#order">ORDER NOW →</a>
+ </div>
+</nav>
+
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <span class="badge">🔥 TAMIL NADU STYLE • FULL MASS TASTE</span>
+   <h1>Biriyani that<br><span class="gradient">Hits Different.</span></h1>
+   <p>Seeraga samba rice, slow-cooked masala, juicy chicken and that unmistakable Tamil Nadu-style aroma. One plate is never enough.</p>
+   <div class="hero-actions">
+    <a class="btn" href="#offer">GET 1+1 OFFER 🔥</a>
+    <a class="btn dark" href="#menu">EXPLORE MENU</a>
+   </div>
+   <div class="stats">
+    <div class="stat"><strong>4.9★</strong><span>FOOD LOVERS</span></div>
+    <div class="stat"><strong>10K+</strong><span>PLATES SERVED</span></div>
+    <div class="stat"><strong>100%</strong><span>MASS TASTE</span></div>
+   </div>
+  </div>
+
+  <div class="food-scene" aria-label="3D styled biryani illustration">
+   <div class="glow"></div>
+   <div class="offer"><div><b>1 + 1</b><small>FREE TODAY</small></div></div>
+   <div class="floating f1">🔥 <span>HOT & FRESH</span><strong>Every Order</strong></div>
+   <div class="floating f2">⭐ <span>CUSTOMER RATING</span><strong>4.9 / 5</strong></div>
+   <div class="plate"></div><div class="rice"></div>
+   <div class="meat m1"></div><div class="meat m2"></div><div class="meat m3"></div>
+   <div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="menu">
+ <div class="container">
+  <div class="section-title">
+   <div class="kicker">Our favourites</div>
+   <h2>Built for <span class="gradient">Biryani Lovers.</span></h2>
+   <p>Bold flavours, generous portions and proper Tamil Nadu comfort food.</p>
+  </div>
+  <div class="cards">
+   <article class="card">
+    <div class="food-icon">🍗</div><h3>Mass Chicken Biryani</h3>
+    <p>Fragrant seeraga samba rice, tender chicken and signature spicy masala.</p>
+    <div class="price"><b>₹179</b><span class="tag">BESTSELLER</span></div>
+   </article>
+   <article class="card">
+    <div class="food-icon">🥩</div><h3>Mutton Biryani</h3>
+    <p>Slow-cooked mutton, aromatic rice and rich masala for a royal Tamil feast.</p>
+    <div class="price"><b>₹249</b><span class="tag">MASS FAVOURITE</span></div>
+   </article>
+   <article class="card">
+    <div class="food-icon">🍳</div><h3>Egg Biryani Combo</h3>
+    <p>Masala-loaded biryani served with a perfectly cooked egg and sides.</p>
+    <div class="price"><b>₹149</b><span class="tag">VALUE PICK</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="container" id="offer">
+ <div class="offer-section">
+  <div class="offer-content">
+   <div class="kicker" style="color:#ffe29a">TODAY'S MASS DEAL</div>
+   <h2>Order 1 Biryani.<br>Get <span style="color:#fff">1 MORE FREE.</span></h2>
+   <p>Double the biryani, double the happiness. Grab our limited-time 1+1 offer before it disappears.</p>
+   <div class="offer-note">*Offer availability, eligible items and terms may vary. Check at checkout.</div>
+   <a class="btn" style="margin-top:25px" href="#order">CLAIM 1+1 NOW →</a>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="why">
+ <div class="container">
+  <div class="section-title">
+   <div class="kicker">The Mass promise</div>
+   <h2>Why people say <span class="gradient">“Semma!”</span></h2>
+  </div>
+  <div class="features">
+   <div class="feature"><div class="ico">🌾</div><h4>Seeraga Samba</h4><p>Classic Tamil Nadu rice for authentic aroma.</p></div>
+   <div class="feature"><div class="ico">🔥</div><h4>Fresh & Hot</h4><p>Prepared fresh for maximum flavour.</p></div>
+   <div class="feature"><div class="ico">🌶️</div><h4>Mass Masala</h4><p>Balanced spice with deep, slow-cooked flavour.</p></div>
+   <div class="feature"><div class="ico">❤️</div><h4>Made with Love</h4><p>Generous portions made for happy meals.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="cta" id="order">
+ <div class="container">
+  <div class="kicker">Hungry already?</div>
+  <h2>Let's make your next meal <span class="gradient">MASS.</span></h2>
+  <p style="color:#bcae96;margin-bottom:25px">Tap below to start your order and check today's 1+1 availability.</p>
+  <a class="btn" href="tel:+919999999999">📞 ORDER NOW</a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <div>© 2026 MASS BIRYANI • Tamil Nadu Style</div>
+  <div>Fresh • Hot • Spicy • Mass</div>
+ </div>
+</footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const el=document.querySelector(a.getAttribute('href'));
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
